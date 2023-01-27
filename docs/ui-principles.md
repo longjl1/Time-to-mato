@@ -4,3 +4,5 @@
 - let the timer be the loudest object on the dashboard
 - avoid dashboard-card clutter and keep sections sharply named
 - make the history surface readable with a quick glance
+
+- [2023-01-27] reinforced that the timer should stay visually dominant while the rest of the interface remains quiet and structural.
