@@ -6,3 +6,5 @@
 - make the history surface readable with a quick glance
 
 - [2023-01-27] reinforced that the timer should stay visually dominant while the rest of the interface remains quiet and structural.
+
+- [2023-02-05] reinforced that the timer should stay visually dominant while the rest of the interface remains quiet and structural.
