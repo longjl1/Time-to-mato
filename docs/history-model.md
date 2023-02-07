@@ -7,3 +7,5 @@ The history surface is intentionally simple:
 - archived tracks for older focus themes
 
 - [2023-02-02] added another note about balancing dense calendar patterns with readable recent-session details.
+
+- [2023-02-07] added another note about balancing dense calendar patterns with readable recent-session details.
