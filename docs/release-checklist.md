@@ -28,3 +28,5 @@
 - [2023-04-15] added another verification note for dashboard readability, history tabs, and mobile spacing.
 
 - [2023-04-25] added another verification note for dashboard readability, history tabs, and mobile spacing.
+
+- [2023-05-04] added another verification note for dashboard readability, history tabs, and mobile spacing.
