@@ -36,3 +36,5 @@
 - [2023-05-19] nudged the roadmap toward clearer weekly review, lighter archive browsing, and tighter session planning.
 
 - [2023-05-31] nudged the roadmap toward clearer weekly review, lighter archive browsing, and tighter session planning.
+
+- [2023-06-10] nudged the roadmap toward clearer weekly review, lighter archive browsing, and tighter session planning.
