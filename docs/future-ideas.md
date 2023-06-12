@@ -37,3 +37,5 @@
 - [2023-05-25] parked another small idea for saved routines, softer archive views, or keyboard-first control.
 
 - [2023-06-04] parked another small idea for saved routines, softer archive views, or keyboard-first control.
+
+- [2023-06-12] parked another small idea for saved routines, softer archive views, or keyboard-first control.
