@@ -110,3 +110,6 @@ npm run start
 
 
 - [2023-09-09] tightened one more line around the dashboard, history route, or lightweight local-first workflow.
+
+
+- [2023-09-15] tightened one more line around the dashboard, history route, or lightweight local-first workflow.
