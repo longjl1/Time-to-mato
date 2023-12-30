@@ -83,3 +83,5 @@ The history surface is intentionally simple:
 - [2023-12-12] added another note about balancing dense calendar patterns with readable recent-session details.
 
 - [2023-12-18] added another note about balancing dense calendar patterns with readable recent-session details.
+
+- [2023-12-30] added another note about balancing dense calendar patterns with readable recent-session details.
