@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { Switch } from "@base-ui-components/react";
-import { currentTask, sessionStrip } from "@/lib/data";
+import { sessionStrip } from "@/lib/data";
+import type { FocusTask } from "@/lib/focus-store";
 
 const totalSeconds = 25 * 60;
 
@@ -16,7 +17,11 @@ function formatClock(seconds: number) {
   return `${mins}:${secs}`;
 }
 
-export function TimerCard() {
+type TimerCardProps = {
+  currentTask: FocusTask | null;
+};
+
+export function TimerCard({ currentTask }: TimerCardProps) {
   const [secondsLeft, setSecondsLeft] = useState(totalSeconds);
   const [running, setRunning] = useState(true);
 
@@ -35,15 +40,21 @@ export function TimerCard() {
     [secondsLeft],
   );
 
+  const currentBlock = currentTask ? "Current focus" : "Inbox reset";
+  const currentTitle = currentTask?.title ?? "No active task yet";
+  const currentDetail =
+    currentTask?.detail ??
+    "Add a task in the queue to let the timer and history track real work.";
+
   return (
     <section className="panel panel-strong surface timer-panel">
       <div className="section-head">
         <div>
           <p className="section-kicker">Current</p>
-          <h2 className="section-title">{currentTask.title}</h2>
-          <p className="section-copy">{currentTask.detail}</p>
+          <h2 className="section-title">{currentTitle}</h2>
+          <p className="section-copy">{currentDetail}</p>
         </div>
-        <div className="metric-chip">{currentTask.block}</div>
+        <div className="metric-chip">{currentBlock}</div>
       </div>
 
       <div className="timer-stage">
