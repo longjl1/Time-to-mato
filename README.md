@@ -8,6 +8,7 @@
 - dashboard for the current timer, today list, and completed tasks
 - history page for calendar patterns, session logs, and archived tracks
 - lightweight extras such as a todo strip and focus mode toggle
+- task CRUD with local persistence in the browser
 
 ## Stack
 
