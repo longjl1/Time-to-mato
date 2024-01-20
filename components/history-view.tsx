@@ -1,9 +1,11 @@
 "use client";
 
 import { Tabs } from "@base-ui-components/react";
-import { archivedTracks, monthGrid, recentHistory } from "@/lib/data";
+import { useFocusStore } from "@/lib/focus-store";
 
 export function HistoryView() {
+  const { archivedTracks, monthGrid, recentHistory } = useFocusStore();
+
   return (
     <main className="workspace">
       <section className="panel panel-strong surface">
@@ -55,20 +57,31 @@ export function HistoryView() {
 
           <Tabs.Panel className="tabs-panel" value="log">
             <div className="history-grid">
-              {recentHistory.map((entry) => (
-                <article key={`${entry.date}-log`} className="history-row">
+              {recentHistory.length === 0 ? (
+                <article className="history-row">
                   <div>
-                    <p className="history-day">
-                      {entry.day} <span>{entry.date}</span>
+                    <p className="history-day">No session log yet</p>
+                    <p className="mini-note">
+                      Completed tasks from the dashboard will appear here.
                     </p>
-                    <p className="mini-note">{entry.total}</p>
-                  </div>
-                  <div className="history-meta">
-                    <span>{entry.done} completed tasks</span>
-                    <span>{entry.carry} carried forward</span>
                   </div>
                 </article>
-              ))}
+              ) : (
+                recentHistory.map((entry) => (
+                  <article key={`${entry.date}-log`} className="history-row">
+                    <div>
+                      <p className="history-day">
+                        {entry.day} <span>{entry.date}</span>
+                      </p>
+                      <p className="mini-note">{entry.total}</p>
+                    </div>
+                    <div className="history-meta">
+                      <span>{entry.done} completed tasks</span>
+                      <span>{entry.carry} carried forward</span>
+                    </div>
+                  </article>
+                ))
+              )}
             </div>
           </Tabs.Panel>
 
