@@ -287,6 +287,45 @@ textarea {
   margin: 0;
 }
 
+.task-form {
+  display: grid;
+  gap: 14px;
+}
+
+.task-field {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.task-field input,
+.task-field textarea,
+.task-inline-input,
+.task-inline-textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.76);
+  padding: 14px 16px;
+  color: var(--text);
+  resize: vertical;
+}
+
+.task-button,
+.task-actions button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #111111;
+  color: #f7f7f3;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.task-actions button {
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--text);
+}
+
 .task-list {
   display: grid;
   gap: 12px;
@@ -302,6 +341,40 @@ textarea {
   background: rgba(255, 255, 255, 0.62);
 }
 
+.task-item-vertical {
+  display: grid;
+  gap: 14px;
+}
+
+.task-main {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+}
+
+.task-copy {
+  display: grid;
+  gap: 6px;
+}
+
+.task-copy strong {
+  font-size: 1rem;
+}
+
+.task-copy span {
+  color: var(--muted);
+}
+
+.task-copy--stretch {
+  flex: 1;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .task-list--soft li {
   background: rgba(255, 255, 255, 0.42);
 }
@@ -315,6 +388,12 @@ textarea {
 
 .task-state--done {
   background: #111111;
+}
+
+.empty-state {
+  color: var(--muted);
+  justify-content: center;
+  text-align: center;
 }
 
 .history-grid {
