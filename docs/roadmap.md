@@ -88,3 +88,5 @@
 - [2023-12-31] nudged the roadmap toward clearer weekly review, lighter archive browsing, and tighter session planning.
 
 - [2024-02-02] nudged the roadmap toward richer task editing, stronger continuity, and more useful history summaries.
+
+- [2024-02-16] nudged the roadmap toward richer task editing, stronger continuity, and more useful history summaries.
