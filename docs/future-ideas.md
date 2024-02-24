@@ -87,3 +87,5 @@
 - [2023-12-30] parked another small idea for saved routines, softer archive views, or keyboard-first control.
 
 - [2024-02-13] parked another idea for filters, quick captures, or richer archive views once the CRUD baseline feels settled.
+
+- [2024-02-24] parked another idea for filters, quick captures, or richer archive views once the CRUD baseline feels settled.
