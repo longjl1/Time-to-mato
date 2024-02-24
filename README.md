@@ -153,3 +153,6 @@ npm run start
 
 
 - [2024-02-08] clarified another small point about local-first tasks, the dashboard queue, or the history route.
+
+
+- [2024-02-24] clarified another small point about local-first tasks, the dashboard queue, or the history route.
