@@ -94,3 +94,5 @@ calendar/history workflow for Time-to-mato.
 - [2024-03-10] logged another note about CRUD flow, local persistence, and keeping the dashboard calm while tasks move across states.
 
 - [2024-03-24] logged another note about CRUD flow, local persistence, and keeping the dashboard calm while tasks move across states.
+
+- [2024-04-22] logged another note about CRUD flow, local persistence, and keeping the dashboard calm while tasks move across states.
