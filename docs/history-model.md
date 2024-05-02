@@ -95,3 +95,5 @@ The history surface is intentionally simple:
 - [2024-03-16] clarified how completed tasks should surface in the recent log and darken the calendar cells over time.
 
 - [2024-04-02] clarified how completed tasks should surface in the recent log and darken the calendar cells over time.
+
+- [2024-05-02] clarified how completed tasks should surface in the recent log and darken the calendar cells over time.
