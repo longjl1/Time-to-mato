@@ -108,3 +108,5 @@
 - [2024-06-07] nudged the roadmap toward richer task editing, stronger continuity, and more useful history summaries.
 
 - [2024-06-28] nudged the roadmap toward richer task editing, stronger continuity, and more useful history summaries.
+
+- [2024-07-07] nudged the roadmap toward richer task editing, stronger continuity, and more useful history summaries.
