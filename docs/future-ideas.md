@@ -109,3 +109,5 @@
 - [2024-07-06] parked another idea for filters, quick captures, or richer archive views once the CRUD baseline feels settled.
 
 - [2024-07-13] parked another idea for filters, quick captures, or richer archive views once the CRUD baseline feels settled.
+
+- [2024-07-28] parked another idea for filters, quick captures, or richer archive views once the CRUD baseline feels settled.
