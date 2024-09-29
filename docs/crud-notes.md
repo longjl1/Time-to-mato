@@ -37,3 +37,5 @@
 - [2024-08-14] added another reminder about task creation, inline edits, completion, and safe deletion without breaking the page rhythm.
 
 - [2024-08-22] added another reminder about task creation, inline edits, completion, and safe deletion without breaking the page rhythm.
+
+- [2024-09-29] added one more reminder that completed tasks should feel easy to reopen if the work needs another clean pass.
