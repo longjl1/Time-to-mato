@@ -3,6 +3,9 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { archivedTracks as archivedTrackSeeds } from "@/lib/data";
 
+export const TITLE_LIMIT = 72;
+export const DETAIL_LIMIT = 180;
+
 export type FocusTask = {
   id: string;
   title: string;
@@ -12,9 +15,17 @@ export type FocusTask = {
   completedAt: string | null;
 };
 
+export type FocusSettings = {
+  darkMode: boolean;
+  focusMinutes: number;
+  breakMinutes: number;
+  dailyGoal: number;
+};
+
 type FocusStore = {
   tasks: FocusTask[];
   archivedTracks: string[];
+  settings: FocusSettings;
 };
 
 const STORAGE_KEY = "time-to-mato:store";
@@ -24,7 +35,7 @@ const seededTasks: FocusTask[] = [
   {
     id: "task-1",
     title: "Draft the weekly review memo",
-    detail: "Isolate one clean 25-minute pass and leave the polish for later.",
+    detail: "Isolate one clean focus pass and leave the polish for later.",
     completed: false,
     createdAt: "2024-01-03T09:15:00.000Z",
     completedAt: null,
@@ -47,10 +58,26 @@ const seededTasks: FocusTask[] = [
   },
 ];
 
+const defaultSettings: FocusSettings = {
+  darkMode: false,
+  focusMinutes: 25,
+  breakMinutes: 5,
+  dailyGoal: 4,
+};
+
 const defaultStore: FocusStore = {
   tasks: seededTasks,
   archivedTracks: archivedTrackSeeds,
+  settings: defaultSettings,
 };
+
+function clamp(value: number, min: number, max: number) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function normalizeText(value: string, limit: number) {
+  return value.trim().slice(0, limit);
+}
 
 function readStore(): FocusStore {
   if (typeof window === "undefined") {
@@ -69,6 +96,10 @@ function readStore(): FocusStore {
       archivedTracks: Array.isArray(parsed.archivedTracks)
         ? parsed.archivedTracks
         : defaultStore.archivedTracks,
+      settings: {
+        ...defaultSettings,
+        ...(parsed.settings ?? {}),
+      },
     };
   } catch {
     return defaultStore;
@@ -89,7 +120,7 @@ function formatDay(dateString: string) {
   }).format(date);
 }
 
-function summarizeHistory(tasks: FocusTask[]) {
+function summarizeHistory(tasks: FocusTask[], focusMinutes: number) {
   const completed = tasks
     .filter((task) => task.completed && task.completedAt)
     .sort((a, b) => (a.completedAt! < b.completedAt! ? 1 : -1));
@@ -98,10 +129,10 @@ function summarizeHistory(tasks: FocusTask[]) {
 
   completed.forEach((task, index) => {
     const stamp = task.completedAt!.slice(0, 10);
-    const current = grouped.get(stamp) ?? { done: 0, carry: 0, total: "25m" };
+    const current = grouped.get(stamp) ?? { done: 0, carry: 0, total: `${focusMinutes}m` };
     current.done += 1;
     current.carry = index % 3 === 0 ? 1 : current.carry;
-    current.total = `${current.done * 25}m`;
+    current.total = `${current.done * focusMinutes}m`;
     grouped.set(stamp, current);
   });
 
@@ -151,6 +182,11 @@ export function useFocusStore() {
     };
   }, []);
 
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    document.documentElement.dataset.theme = store.settings.darkMode ? "dark" : "light";
+  }, [store.settings.darkMode]);
+
   const updateStore = useCallback((updater: (current: FocusStore) => FocusStore) => {
     const current = readStore();
     const next = updater(current);
@@ -160,13 +196,17 @@ export function useFocusStore() {
 
   const addTask = useCallback(
     (title: string, detail: string) => {
+      const safeTitle = normalizeText(title, TITLE_LIMIT);
+      const safeDetail = normalizeText(detail, DETAIL_LIMIT);
+      if (!safeTitle) return;
+
       updateStore((current) => ({
         ...current,
         tasks: [
           {
             id: crypto.randomUUID(),
-            title,
-            detail,
+            title: safeTitle,
+            detail: safeDetail || "A new task ready for a clean focus block.",
             completed: false,
             createdAt: new Date().toISOString(),
             completedAt: null,
@@ -183,7 +223,15 @@ export function useFocusStore() {
       updateStore((current) => ({
         ...current,
         tasks: current.tasks.map((task) =>
-          task.id === id ? { ...task, ...patch } : task,
+          task.id === id
+            ? {
+                ...task,
+                title: normalizeText(patch.title, TITLE_LIMIT),
+                detail:
+                  normalizeText(patch.detail, DETAIL_LIMIT) ||
+                  "Task details intentionally left light.",
+              }
+            : task,
         ),
       }));
     },
@@ -218,6 +266,22 @@ export function useFocusStore() {
     [updateStore],
   );
 
+  const updateSettings = useCallback(
+    (patch: Partial<FocusSettings>) => {
+      updateStore((current) => ({
+        ...current,
+        settings: {
+          ...current.settings,
+          ...patch,
+          focusMinutes: clamp(patch.focusMinutes ?? current.settings.focusMinutes, 10, 90),
+          breakMinutes: clamp(patch.breakMinutes ?? current.settings.breakMinutes, 3, 30),
+          dailyGoal: clamp(patch.dailyGoal ?? current.settings.dailyGoal, 1, 12),
+        },
+      }));
+    },
+    [updateStore],
+  );
+
   const queuedTasks = useMemo(
     () => store.tasks.filter((task) => !task.completed),
     [store.tasks],
@@ -231,17 +295,26 @@ export function useFocusStore() {
     [store.tasks],
   );
 
+  const completedToday = useMemo(() => {
+    const today = new Date().toISOString().slice(0, 10);
+    return completedTasks.filter((task) => task.completedAt?.startsWith(today)).length;
+  }, [completedTasks]);
+
   return {
     tasks: store.tasks,
+    settings: store.settings,
     queuedTasks,
     completedTasks,
+    completedToday,
     currentTask: queuedTasks[0] ?? null,
     archivedTracks: store.archivedTracks,
-    recentHistory: summarizeHistory(store.tasks),
+    recentHistory: summarizeHistory(store.tasks, store.settings.focusMinutes),
     monthGrid: buildMonthGrid(store.tasks),
+    estimatedQueueMinutes: queuedTasks.length * store.settings.focusMinutes,
     addTask,
     updateTask,
     toggleTask,
     deleteTask,
+    updateSettings,
   };
 }
