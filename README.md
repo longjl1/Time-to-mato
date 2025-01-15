@@ -13,6 +13,8 @@ to manage tasks without turning the page into a heavy project manager.
 - a current-task surface tied to the active queue
 - task CRUD: create, edit, complete, reopen, and delete
 - browser-side persistence with `localStorage`
+- a modal task composer instead of an always-open creation panel
+- night mode and adjustable focus / break durations
 - a history route with calendar density, recent logs, and archived tracks
 - a restrained black-and-white UI built around spacing and contrast
 
