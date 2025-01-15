@@ -4,3 +4,5 @@
 - keep focus and break durations adjustable but bounded
 - let the timer read from the same stored settings as the rest of the workspace
 - keep the dashboard quiet by moving task creation into a modal instead of an open card
+
+- [2025-01-15] added another note about dark mode, custom durations, or keeping the settings surface compact.
