@@ -118,3 +118,5 @@
 - [2024-08-14] nudged the roadmap toward richer task editing, stronger continuity, and more useful history summaries.
 
 - [2024-08-22] nudged the roadmap toward richer task editing, stronger continuity, and more useful history summaries.
+
+- [2025-01-18] nudged the roadmap toward richer focus settings, quieter task input, and more polished daily planning.
