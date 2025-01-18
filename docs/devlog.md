@@ -118,3 +118,5 @@ calendar/history workflow for Time-to-mato.
 - [2024-08-16] logged another note about CRUD flow, local persistence, and keeping the dashboard calm while tasks move across states.
 
 - [2024-09-26] logged another note about CRUD flow, local persistence, and keeping the dashboard calm while tasks move across states.
+
+- [2025-01-18] logged another pass on night mode, modal task creation, and making the timer feel stable even with longer task text.
