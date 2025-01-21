@@ -55,3 +55,6 @@ Open `http://localhost:3000`.
 npm run build
 npm run start
 ```
+
+
+- [2025-01-21] tightened another small line around settings, modal task creation, or the local-first timer workflow.
