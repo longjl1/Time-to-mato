@@ -116,3 +116,5 @@
 - [2024-08-15] added another check for local persistence, empty states, and task actions across both main routes.
 
 - [2024-08-22] added another check for local persistence, empty states, and task actions across both main routes.
+
+- [2025-01-21] added another manual check for theme persistence, timer sizing, and task composer behavior.
