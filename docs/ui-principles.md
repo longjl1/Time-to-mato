@@ -118,3 +118,5 @@
 - [2024-09-14] reinforced that CRUD controls should stay quiet and let spacing, contrast, and grouping carry the interface.
 
 - [2025-01-21] reinforced that the dark surface should stay monochrome and avoid turning the interface into a neon dashboard.
+
+- [2025-01-29] reinforced that the dark surface should stay monochrome and avoid turning the interface into a neon dashboard.
