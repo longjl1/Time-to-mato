@@ -119,3 +119,5 @@
 - [2024-09-21] parked another idea for filters, quick captures, or richer archive views once the CRUD baseline feels settled.
 
 - [2025-01-21] parked another idea for presets, alternate themes, or a gentler focus summary once the settings baseline is stable.
+
+- [2025-02-05] parked another idea for presets, alternate themes, or a gentler focus summary once the settings baseline is stable.
