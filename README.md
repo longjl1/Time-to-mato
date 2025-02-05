@@ -58,3 +58,6 @@ npm run start
 
 
 - [2025-01-21] tightened another small line around settings, modal task creation, or the local-first timer workflow.
+
+
+- [2025-02-05] tightened another small line around settings, modal task creation, or the local-first timer workflow.
