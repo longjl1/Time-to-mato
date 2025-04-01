@@ -127,3 +127,5 @@
 - [2025-03-01] parked another idea for presets, alternate themes, or a gentler focus summary once the settings baseline is stable.
 
 - [2025-03-16] parked another idea for presets, alternate themes, or a gentler focus summary once the settings baseline is stable.
+
+- [2025-04-01] parked another idea for presets, alternate themes, or a gentler focus summary once the settings baseline is stable.
