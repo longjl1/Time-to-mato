@@ -61,3 +61,5 @@
 - [2025-05-13] added another reminder that task creation should feel tucked away until the user explicitly opens the composer.
 
 - [2025-05-18] added another reminder that task creation should feel tucked away until the user explicitly opens the composer.
+
+- [2025-05-27] added another reminder that task creation should feel tucked away until the user explicitly opens the composer.
