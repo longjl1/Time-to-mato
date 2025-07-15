@@ -38,3 +38,5 @@
 - [2025-07-03] added another note about dark mode, custom durations, or keeping the settings surface compact.
 
 - [2025-07-10] added another note about dark mode, custom durations, or keeping the settings surface compact.
+
+- [2025-07-15] added another note about dark mode, custom durations, or keeping the settings surface compact.
