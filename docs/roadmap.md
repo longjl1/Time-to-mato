@@ -178,3 +178,5 @@
 - [2025-11-06] nudged the roadmap toward richer focus settings, quieter task input, and more polished daily planning.
 
 - [2025-11-19] nudged the roadmap toward richer focus settings, quieter task input, and more polished daily planning.
+
+- [2025-12-01] nudged the roadmap toward richer focus settings, quieter task input, and more polished daily planning.
