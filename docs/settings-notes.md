@@ -70,3 +70,5 @@
 - [2025-12-12] added another note about dark mode, custom durations, or keeping the settings surface compact.
 
 - [2025-12-23] added another note about dark mode, custom durations, or keeping the settings surface compact.
+
+- [2025-12-18] added one more reminder that the timer digits should keep their own space even when the task copy grows to the limit.
